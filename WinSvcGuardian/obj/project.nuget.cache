@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "bapqZnXH1eM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\WDAGUtilityAccount\\RiderProjects\\WinSvcGuardian\\WinSvcGuardian\\WinSvcGuardian.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\WDAGUtilityAccount\\.nuget\\packages\\system.diagnostics.eventlog\\10.0.0-preview.2.25163.2\\system.diagnostics.eventlog.10.0.0-preview.2.25163.2.nupkg.sha512",
+    "C:\\Users\\WDAGUtilityAccount\\.nuget\\packages\\system.serviceprocess.servicecontroller\\10.0.0-preview.2.25163.2\\system.serviceprocess.servicecontroller.10.0.0-preview.2.25163.2.nupkg.sha512"
+  ],
+  "logs": []
+}
