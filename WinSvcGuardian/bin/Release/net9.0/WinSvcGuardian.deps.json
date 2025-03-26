@@ -1,0 +1,81 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "WinSvcGuardian/1.0.0": {
+        "dependencies": {
+          "System.ServiceProcess.ServiceController": "10.0.0-preview.2.25163.2"
+        },
+        "runtime": {
+          "WinSvcGuardian.dll": {}
+        }
+      },
+      "System.Diagnostics.EventLog/10.0.0-preview.2.25163.2": {
+        "runtime": {
+          "lib/net9.0/System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.16302"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.Messages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.16302"
+          }
+        }
+      },
+      "System.ServiceProcess.ServiceController/10.0.0-preview.2.25163.2": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "10.0.0-preview.2.25163.2"
+        },
+        "runtime": {
+          "lib/net9.0/System.ServiceProcess.ServiceController.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.16302"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.ServiceProcess.ServiceController.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.16302"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WinSvcGuardian/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Diagnostics.EventLog/10.0.0-preview.2.25163.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EYXQA8PXPZKRxfBfYrP2YgkCcLiWk6/Mx03N5pI5mY92Yys2zOy/BgNVGyMAU7/7f40l6SotVpahixca2COq5A==",
+      "path": "system.diagnostics.eventlog/10.0.0-preview.2.25163.2",
+      "hashPath": "system.diagnostics.eventlog.10.0.0-preview.2.25163.2.nupkg.sha512"
+    },
+    "System.ServiceProcess.ServiceController/10.0.0-preview.2.25163.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OyG3zs05Ij3biTRJh8OoA3i+yIdS+cFjTV/xdzlrlSI+2dBSRUYEFFUzaiAoG2jWjvmg0X+ITzSuVauzfK+eFw==",
+      "path": "system.serviceprocess.servicecontroller/10.0.0-preview.2.25163.2",
+      "hashPath": "system.serviceprocess.servicecontroller.10.0.0-preview.2.25163.2.nupkg.sha512"
+    }
+  }
+}
