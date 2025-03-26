@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinSvcGuardian")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+695643ef58fff7b17eb21e7c16ee4a63e17a1bc7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9bc50541b7373305a0d2f68135c58023cd3da40")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinSvcGuardian")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinSvcGuardian")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
