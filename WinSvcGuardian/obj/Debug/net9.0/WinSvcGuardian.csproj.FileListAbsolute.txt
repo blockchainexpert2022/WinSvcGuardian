@@ -19,3 +19,4 @@ C:\Users\WDAGUtilityAccount\RiderProjects\WinSvcGuardian\WinSvcGuardian\obj\Debu
 C:\Users\WDAGUtilityAccount\RiderProjects\WinSvcGuardian\WinSvcGuardian\obj\Debug\net9.0\WinSvcGuardian.pdb
 C:\Users\WDAGUtilityAccount\RiderProjects\WinSvcGuardian\WinSvcGuardian\obj\Debug\net9.0\WinSvcGuardian.genruntimeconfig.cache
 C:\Users\WDAGUtilityAccount\RiderProjects\WinSvcGuardian\WinSvcGuardian\obj\Debug\net9.0\ref\WinSvcGuardian.dll
+C:\Users\WDAGUtilityAccount\RiderProjects\WinSvcGuardian\WinSvcGuardian\obj\Debug\net9.0\WinSvcGuardian.sourcelink.json

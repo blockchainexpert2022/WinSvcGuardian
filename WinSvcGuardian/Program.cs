@@ -26,7 +26,7 @@ class EnhancedServiceMonitor
         Console.WriteLine("Initialisation...");
         
         InitializeConfiguration();
-        ScanInitialStoppedServices();
+        //ScanInitialStoppedServices();
         await RunContinuousMonitoring();
     }
 
