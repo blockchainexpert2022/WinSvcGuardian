@@ -107,10 +107,19 @@ class EnhancedServiceMonitor
                             Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Maintien arrêté: {service.ServiceName}");
                             service.Stop();
                             service.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(10));
+                            
+                            // Vérifier si le service est vraiment arrêté
+                            if (service.Status != ServiceControllerStatus.Stopped)
+                            {
+                                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Échec de l'arrêt du service {service.ServiceName} - Retrait du fichier de configuration");
+                                RemoveServiceFromConfig(service.ServiceName);
+                            }
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Erreur sur {service.ServiceName}: {ex.Message}");
+                            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Retrait du service {service.ServiceName} du fichier de configuration");
+                            RemoveServiceFromConfig(service.ServiceName);
                         }
                     }
                 }
@@ -138,6 +147,16 @@ class EnhancedServiceMonitor
                 Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Ajout de {newServices.Count} services ({context}): {string.Join(", ", newServices)}");
                 AppendServicesToConfig(newServices);
             }
+        }
+    }
+
+    private static void RemoveServiceFromConfig(string serviceName)
+    {
+        lock (fileLock)
+        {
+            var services = ReadConfiguredServices();
+            var updatedServices = services.Where(s => !s.Equals(serviceName, StringComparison.OrdinalIgnoreCase)).ToList();
+            File.WriteAllLines(configFilePath, updatedServices);
         }
     }
 
