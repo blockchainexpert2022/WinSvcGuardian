@@ -24,9 +24,9 @@ class EnhancedServiceMonitor
     {
         Console.WriteLine("=== Service Monitor ===");
         Console.WriteLine("Initialisation...");
-        
+    
         InitializeConfiguration();
-        //ScanInitialStoppedServices();
+        StopAllConfiguredServicesOnStartup(); // <-- Nouvelle méthode
         await RunContinuousMonitoring();
     }
 
@@ -171,5 +171,33 @@ class EnhancedServiceMonitor
     private static void AppendServicesToConfig(IEnumerable<string> services)
     {
         File.AppendAllLines(configFilePath, services);
+    }
+    
+    private static void StopAllConfiguredServicesOnStartup()
+    {
+        var monitoredServices = ReadConfiguredServices();
+        Console.WriteLine($"Vérification initiale de {monitoredServices.Count} services configurés...");
+
+        foreach (var serviceName in monitoredServices)
+        {
+            try
+            {
+                using (var service = new ServiceController(serviceName))
+                {
+                    if (service.Status == ServiceControllerStatus.Running)
+                    {
+                        Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Arrêt initial: {serviceName}");
+                        service.Stop();
+                        service.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(10));
+                        serviceStatusHistory[serviceName] = ServiceControllerStatus.Stopped;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Échec de l'arrêt initial de {serviceName}: {ex.Message}");
+                RemoveServiceFromConfig(serviceName); // Retire le service problématique
+            }
+        }
     }
 }
